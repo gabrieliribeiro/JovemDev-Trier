@@ -45,15 +45,31 @@ public class Pessoa {
         this.imc = imc;
     }
 	
-    public void situacaoImc(double imcSituacao) {
+    public void situacaoImc() {
         if (this.sexo == 'F') {
             if (imc <= 19.1) {
                 categoriaImc = "Abaixo do peso";
-            } else {
-                System.out.println("Normal");
+            } else if (imc <= 25.8) {
+                categoriaImc = "Peso ideal";
+            }else if (imc <=  27.3) {
+                categoriaImc = "Pouco acima do peso";
+            }else if (imc <= 32.3) {
+                categoriaImc = "Acima do peso";
+            }else{
+                categoriaImc = "Obesidade";
             }
         } else if (this.sexo == 'M') {
-
+            if (imc < 20.7) {
+                categoriaImc = "Abaixo do peso";
+            } else if (imc <= 26.4) {
+                categoriaImc = "Peso ideal";
+            }else if (imc <=  27.8) {
+                categoriaImc = "Pouco acima do peso";
+            }else if (imc <= 31.1) {
+                categoriaImc = "Acima do peso";
+            }else{
+                categoriaImc = "Obesidade";
+            }
         }
 
     }
@@ -62,7 +78,7 @@ public class Pessoa {
         System.out.println("|----- Cadastro! -----|"
                 + "\n|- Nome: " + this.nome
                 + "\n|- IMC: " + df.format(this.imc)
-                + "\n|- Situação do IMC: "
+                + "\n|- Situação do IMC: " + categoriaImc
         );
 
     }

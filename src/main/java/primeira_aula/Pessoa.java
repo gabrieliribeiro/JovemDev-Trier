@@ -1,11 +1,15 @@
 package primeira_aula;
 
+import java.text.DecimalFormat;
+
 public class Pessoa {
 	private String nome;
 	private char sexo;
 	private double peso;
 	private double altura;
 	private double imc;
+	
+	DecimalFormat df = new DecimalFormat("0.00");
 	
 	public Pessoa(String nome, char sexo, double peso, double altura) {
 		this.nome = nome;
@@ -26,36 +30,44 @@ public class Pessoa {
 		return sexo;
 	}
 
-	public void setSexo(char sexo) {
-		this.sexo = sexo;
-	}
-
 	public double getPeso() {
 		return peso;
-	}
-
-	public void setPeso(double peso) {
-		this.peso = peso;
 	}
 
 	public double getAltura() {
 		return altura;
 	}
 
-	public void setAltura(double altura) {
-		this.altura = altura;
-	}
-	
-
 	public void setImc() {
 		imc = getPeso()/(getAltura()*getAltura());
 		
+		if (this.sexo == 'F') {
+			if (imc >= 19.1) {
+				String situacao =  "\n|- Situação IMC: Abaixo do peso"; 
+			} else {
+				System.out.println("Normal");
+			}
+		} else if (this.sexo == 'M') {
+
+		}
+		
+		
 		this.imc = imc;
+	}
+	
+	public void situacaoImc(double imcSituacao) {
+
+		
 		
 	}
 
 	public void exibeDados() {
-		System.out.println(this.imc);
+		System.out.println("|----- Cadastro! -----|"
+				+ "\n|- Nome: " + this.nome 
+				+ "\n|- IMC: " + df.format(this.imc)
+				
+		);
+		
 	}
 	
 }

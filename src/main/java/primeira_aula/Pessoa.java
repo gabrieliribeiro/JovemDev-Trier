@@ -41,9 +41,14 @@ public class Pessoa {
 	public void setImc() {
 		imc = getPeso()/(getAltura()*getAltura());
 		
+		this.imc = imc;
+	}
+	
+	public void situacaoImc(double imcSituacao) {
+
 		if (this.sexo == 'F') {
 			if (imc >= 19.1) {
-				String situacao =  "\n|- Situação IMC: Abaixo do peso"; 
+				System.out.println("Abaixo do peso");
 			} else {
 				System.out.println("Normal");
 			}
@@ -51,21 +56,13 @@ public class Pessoa {
 
 		}
 		
-		
-		this.imc = imc;
-	}
-	
-	public void situacaoImc(double imcSituacao) {
-
-		
-		
 	}
 
 	public void exibeDados() {
 		System.out.println("|----- Cadastro! -----|"
 				+ "\n|- Nome: " + this.nome 
 				+ "\n|- IMC: " + df.format(this.imc)
-				
+				+ "\n|- Situação do IMC: " + si
 		);
 		
 	}

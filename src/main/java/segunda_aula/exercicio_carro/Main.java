@@ -27,10 +27,9 @@ public class Main {
 				c.cadastra();
 				carros.add(c);
 			}else if (op == 2) {
-				Carro periodo = new Carro();
-				periodo.periodoFabricacao();
-				carros.add(periodo);
-				
+				for (Carro periodo : carros) {
+					periodo.periodoFabricacao();
+				}
 			}else if (op == 3) {
 				for (Carro marca : carros) {
 					marca.listaPorMarca();

@@ -1,5 +1,9 @@
 package segunda_aula.exercicio_carro;
 
+import java.text.DateFormat;
+import java.time.LocalDate;
+
+import javax.print.attribute.standard.DateTimeAtCompleted;
 import javax.swing.JOptionPane;
 
 public class Carro {
@@ -66,6 +70,7 @@ public class Carro {
 		int periodoFabricacao;
 		int filtrarPeriodo = Integer.parseInt(JOptionPane.showInputDialog("Informe o período que deseja filtrar: "));
 		periodoFabricacao = getFim()-getInicio();
+		//usar LocalDate para fazer is between
 		if (filtrarPeriodo == periodoFabricacao) {
 			JOptionPane.showMessageDialog(null, "Período de fabricação: " + periodoFabricacao);
 		}else {

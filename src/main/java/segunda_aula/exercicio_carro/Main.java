@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 public class Main {
 	
 	static List<Carro> carros =  new ArrayList<Carro>();
+	static List<Carro> periodo = new ArrayList<Carro>();
 	
 	public static void main(String[] args) {
 		String menu = 
@@ -27,9 +28,8 @@ public class Main {
 				c.cadastra();
 				carros.add(c);
 			}else if (op == 2) {
-				for (Carro periodo : carros) {
-					periodo.periodoFabricacao();
-				}
+				Carro p = new Carro();
+				periodo.add(p);
 			}else if (op == 3) {
 				for (Carro marca : carros) {
 					marca.listaPorMarca();

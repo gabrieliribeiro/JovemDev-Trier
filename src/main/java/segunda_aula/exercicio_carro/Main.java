@@ -8,7 +8,6 @@ import javax.swing.JOptionPane;
 public class Main {
 	
 	static List<Carro> carros =  new ArrayList<Carro>();
-	static List<Carro> periodo = new ArrayList<Carro>();
 	
 	public static void main(String[] args) {
 		String menu = 
@@ -28,8 +27,10 @@ public class Main {
 				c.cadastra();
 				carros.add(c);
 			}else if (op == 2) {
-				Carro p = new Carro();
-				periodo.add(p);
+				//verificar modo de como fazer uma lista aparecer e não um de cada vez
+				for (Carro periodo : carros) {
+					periodo.periodoFabricacao();
+				}
 			}else if (op == 3) {
 				for (Carro marca : carros) {
 					marca.listaPorMarca();
@@ -39,6 +40,8 @@ public class Main {
 				for (Carro cor : carros) {
 					cor.listaPorCor();
 				}
+			}else {
+				JOptionPane.showMessageDialog(null, "Opção inválida! Selecione uma opção entre 1 e 5");
 			}
 			
 		}while(op !=5);

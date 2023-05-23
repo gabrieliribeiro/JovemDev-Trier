@@ -72,16 +72,16 @@ public class Carro {
 			JOptionPane.showMessageDialog(null, "Não há carros com esse período de fabricação");
 		}
 		
-		
 	}
 	
 	public void listaPorMarca() {
+		//fazer filtro
 		JOptionPane.showMessageDialog(null, "Marca: " + getMarca());
 	}
 	
 	public void listaPorCor() {
 		
-		
+		// fazer ENUM com as opções e fazer filtro
 		JOptionPane.showMessageDialog(null, "Cor: " + getCor());
 	}
 	

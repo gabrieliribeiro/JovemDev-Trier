@@ -12,16 +12,10 @@ public class Jogador {
 	private int numeroCamisa;
 	private int quantidadeDeGols;
 
-	public Jogador() {
+	public void cadastraJogador() {
 		setNome(JOptionPane.showInputDialog("Informe o nome do jogador: "));
-		this.numeroCamisa = Integer.parseInt(JOptionPane.showInputDialog("Informe o número da camisa: "));
-		this.quantidadeDeGols = Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de gols marcado por esse jogador: "));
-	}
-
-	public void cadastroJogadores() {
-		getNome();
-		getNumeroCamisa();
-		getQuantidadeDeGols();
+		setNumeroCamisa((Integer.parseInt(JOptionPane.showInputDialog("Informe o número da camisa: "))));
+		setQuantidadeDeGols((Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de gols marcado por esse jogador: "))));
 	}
 
 }

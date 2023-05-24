@@ -7,87 +7,70 @@ import javax.print.attribute.standard.DateTimeAtCompleted;
 import javax.swing.JOptionPane;
 
 public class Carro {
-	//Fazer alteração de váriaveis: Ano -> LocalDate e Cor -> ENUM
-	
-	public enum Cor{
-		VERMELHO, BRANCO, PRATA, PRETO
-	}
-	
+
 	private String marca;
-	private int inicio, fim;
-	private String cor;
-	
+	private int ano;
+	EnumCor cor;
+
 	public String getMarca() {
-		marca.toUpperCase();
 		return marca;
-	}
-
-	public int getInicio() {
-		return inicio;
-	}
-
-	public int getFim() {
-		return fim;
-	}
-
-	public String getCor() {
-		return cor;
 	}
 
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
 
-	public void setInicio(int inicio) {
-		this.inicio = inicio;
+	public int getAno() {
+		return ano;
 	}
 
-	public void setFim(int fim) {
-		this.fim = fim;
+	public void setAno(int ano) {
+		this.ano = ano;
 	}
 
-	public void setCor(String cor) {
-		
-		
-		
+	public EnumCor getCor() {
+		return cor;
+	}
+
+	public void setCor(EnumCor cor) {
 		this.cor = cor;
 	}
 
 	public void cadastra() {
 		setMarca(JOptionPane.showInputDialog("Informe a marca do carro: "));
-		setInicio(Integer.parseInt(JOptionPane.showInputDialog("Informe o período inicial: ")));
-		setFim(Integer.parseInt(JOptionPane.showInputDialog("Informe o período final: ")));
-		setCor(JOptionPane.showInputDialog(
-				"Informe a cor:"
-				+ "\n1 - Vermelho"
-				+ "\n2 - Branco"
-				+ "\n3 - Prata"
-				+ "\n4 - Preto"));
+		setAno(Integer.parseInt(JOptionPane.showInputDialog("Informe o : ")));
 		
-	}
-	
-	public void periodoFabricacao() {
-		int periodoFabricacao;
-		int filtrarPeriodo = Integer.parseInt(JOptionPane.showInputDialog("Informe o período que deseja filtrar: "));
-		periodoFabricacao = getFim()-getInicio();
-		//usar LocalDate para fazer is between
-		if (filtrarPeriodo == periodoFabricacao) {
-			JOptionPane.showMessageDialog(null, "Período de fabricação: " + periodoFabricacao);
-		}else {
-			JOptionPane.showMessageDialog(null, "Não há carros com esse período de fabricação");
+		if (!validar()) {
+			cadastra();
 		}
-		
+
 	}
-	
-	public void listaPorMarca() {
-		//fazer filtro
-		JOptionPane.showMessageDialog(null, "Marca: " + getMarca());
+
+	public boolean validar() {
+		if (marca.trim().equals("")) {
+			JOptionPane.showMessageDialog(null, "A marca deve ser preenchida");
+			return false;
+		}
+		if (ano < 0 || ano > 2023) {
+			JOptionPane.showMessageDialog(null, "Ano inválido");
+			return false;
+		}
+		if (cor == null) {
+			JOptionPane.showMessageDialog(null, "A cor é inválida");
+			return false;
+		}
+		return true;
 	}
-	
-	public void listaPorCor() {
-		
-		// fazer ENUM com as opções e fazer filtro
-		JOptionPane.showMessageDialog(null, "Cor: " + getCor());
+
+	public boolean isPeriodoFabricacao(int anoInicial, int anoFinal) {
+		return this.ano >= anoInicial && this.ano <= anoFinal;
 	}
-	
+
+	public boolean isMarca(String buscaMarca) {
+		return buscaMarca.equalsIgnoreCase(this.marca);
+	}
+
+	public boolean isCor(EnumCor buscaCor) {
+		return buscaCor == this.cor;
+	}
 }

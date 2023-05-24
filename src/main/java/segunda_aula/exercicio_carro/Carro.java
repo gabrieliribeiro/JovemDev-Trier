@@ -5,6 +5,7 @@ import java.time.Year;
 import javax.swing.JOptionPane;
 
 public class Carro {
+<<<<<<< HEAD
     
     public enum Cor {
         VERMELHO, BRANCO, PRATA, PRETO
@@ -75,19 +76,72 @@ public class Carro {
 			JOptionPane.showMessageDialog(null, "Período de fabricação: " + periodoFabricacao);
 		}else {
 			JOptionPane.showMessageDialog(null, "Não há carros com esse período de fabricação");
+=======
+
+	private String marca;
+	private int ano;
+	EnumCor cor;
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+	public int getAno() {
+		return ano;
+	}
+
+	public void setAno(int ano) {
+		this.ano = ano;
+	}
+
+	public EnumCor getCor() {
+		return cor;
+	}
+
+	public void setCor(EnumCor cor) {
+		this.cor = cor;
+	}
+
+	public void cadastra() {
+		setMarca(JOptionPane.showInputDialog("Informe a marca do carro: "));
+		setAno(Integer.parseInt(JOptionPane.showInputDialog("Informe o : ")));
+		
+		if (!validar()) {
+			cadastra();
+>>>>>>> b745b925995fa0eb116bab497e3ba0ffed965b03
 		}
-		
+
 	}
-	
-	public void listaPorMarca() {
-		//fazer filtro
-		JOptionPane.showMessageDialog(null, "Marca: " + getMarca());
+
+	public boolean validar() {
+		if (marca.trim().equals("")) {
+			JOptionPane.showMessageDialog(null, "A marca deve ser preenchida");
+			return false;
+		}
+		if (ano < 0 || ano > 2023) {
+			JOptionPane.showMessageDialog(null, "Ano inválido");
+			return false;
+		}
+		if (cor == null) {
+			JOptionPane.showMessageDialog(null, "A cor é inválida");
+			return false;
+		}
+		return true;
 	}
-	
-	public void listaPorCor() {
-		
-		// fazer ENUM com as opções e fazer filtro
-		JOptionPane.showMessageDialog(null, "Cor: " + getCor());
+
+	public boolean isPeriodoFabricacao(int anoInicial, int anoFinal) {
+		return this.ano >= anoInicial && this.ano <= anoFinal;
 	}
-	
+
+	public boolean isMarca(String buscaMarca) {
+		return buscaMarca.equalsIgnoreCase(this.marca);
+	}
+
+	public boolean isCor(EnumCor buscaCor) {
+		return buscaCor == this.cor;
+	}
 }

@@ -57,12 +57,5 @@ public class Carro {
 				+ "__________\n";
 	}
 
-	public EnumCor getCor() {
-		return cor;
-	}
-
-	public void setCor(EnumCor cor) {
-		this.cor = cor;
-	}
 
 }

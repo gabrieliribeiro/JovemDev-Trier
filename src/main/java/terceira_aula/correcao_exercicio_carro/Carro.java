@@ -6,35 +6,18 @@ import java.time.LocalDate;
 import javax.print.attribute.standard.DateTimeAtCompleted;
 import javax.swing.JOptionPane;
 
+import lombok.Getter;
+import lombok.Setter;
+
+
+@Getter
+@Setter
 public class Carro {
 
 	private String marca;
 	private int ano;
 	EnumCor cor;
 
-	public String getMarca() {
-		return marca;
-	}
-
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
-
-	public int getAno() {
-		return ano;
-	}
-
-	public void setAno(int ano) {
-		this.ano = ano;
-	}
-
-	public EnumCor getCor() {
-		return cor;
-	}
-
-	public void setCor(EnumCor cor) {
-		this.cor = cor;
-	}
 
 	public void cadastra() {
 		setMarca(JOptionPane.showInputDialog("Informe a marca do carro: "));

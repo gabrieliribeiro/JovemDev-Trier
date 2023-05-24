@@ -4,8 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.swing.JOptionPane;
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @Setter
@@ -15,12 +13,12 @@ public class Carro {
     private EnumCor cor;
 
     public void cadastra() {
-        setMarca(JOptionPane.showInputDialog("Informe a marca do carro: "));
+        setMarca(JOptionPane.showInputDialog("Informe a marca do carro: ").toUpperCase());
         setAno(Integer.parseInt(JOptionPane.showInputDialog("Informe o ano do carro: ")));
+        setCor(Utilities.escolheCor());
         if (!validacao()) {
             cadastra();
         }
-
     }
 
     public boolean validacao() {
@@ -52,7 +50,7 @@ public class Carro {
     }
 
     public String toString() {
-        return "|- Marca: " + getMarca()
+        return "\n|- Marca: " + getMarca()
                 +"\n|- Ano: " + getAno()
                 +"\n|- Cor: " + cor.getDescricao()
                 +"\n|__________|\n";

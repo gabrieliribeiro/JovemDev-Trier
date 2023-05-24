@@ -6,7 +6,7 @@ import java.util.List;
 public class Utilities {
 
 	static int escolheOpMenu() {
-		String menuPrincipal = "|----Menu Principal----|"
+		String menuPrincipal = "|---- Menu Principal ----|"
 				+ "\n1 - Cadastrar carro"
 				+ "\n2 - Listar carros por fabricação"
 				+ "\n3 - Listar carros por marca"
@@ -16,9 +16,9 @@ public class Utilities {
 	}
 
 	static EnumCor escolheCor() {
-		String menu = "Cores disponíveis: \n\n";
+		String menu = "|---- Cores disponíveis ----|\n";
 		for (EnumCor cor : EnumCor.values()) {
-			menu += cor.codigo + " - " + cor.descricao + "\n";
+			menu += "|- " + cor.getCodigo() + " - " + cor.getDescricao() + "\n";
 		}
 		int op = Integer.parseInt(JOptionPane.showInputDialog(menu));
 		return EnumCor.findById(op);
@@ -47,7 +47,7 @@ public class Utilities {
 
 	static String listaDeMarca(List<Carro> carros){
 		String marca = JOptionPane.showInputDialog("Informe a marca a ser pesquisada: ");
-		String resposta = "Listagem de carros da marca: " + marca;
+		String resposta = "Listagem de carros da marca: " + marca.toUpperCase();
 
 		int contador = 0;
 

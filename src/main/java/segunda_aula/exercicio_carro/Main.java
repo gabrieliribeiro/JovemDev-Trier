@@ -19,7 +19,7 @@ public class Main {
 					listaDeCarros.add(carro);
 					break;
 				case 2:
-					JOptionPane.showMessageDialog(null, Utilities.listagemPorCor(listaDeCarros));
+					JOptionPane.showMessageDialog(null, Utilities.listagemFabricacao(listaDeCarros));
 					break;
 				case 3:
 					JOptionPane.showMessageDialog(null, Utilities.listaDeMarca(listaDeCarros));

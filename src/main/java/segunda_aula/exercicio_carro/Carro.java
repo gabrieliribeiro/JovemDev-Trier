@@ -1,77 +1,77 @@
 package segunda_aula.exercicio_carro;
 
-import java.text.DateFormat;
 import java.time.LocalDate;
-
-import javax.print.attribute.standard.DateTimeAtCompleted;
+import java.time.Year;
 import javax.swing.JOptionPane;
 
 public class Carro {
-	//Fazer alteração de váriaveis: Ano -> LocalDate e Cor -> ENUM
-	
-	public enum Cor{
-		VERMELHO, BRANCO, PRATA, PRETO
-	}
-	
-	private String marca;
-	private int inicio, fim;
-	private String cor;
-	
-	public String getMarca() {
-		marca.toUpperCase();
-		return marca;
-	}
+    
+    public enum Cor {
+        VERMELHO, BRANCO, PRATA, PRETO
+    }
 
-	public int getInicio() {
-		return inicio;
-	}
+    private String marca;
+    private int inicio, fim, ano;
+ 
+    private Cor cor;
 
-	public int getFim() {
-		return fim;
-	}
+    public String getMarca() {
+        marca.toUpperCase();
+        return marca;
+    }
 
-	public String getCor() {
-		return cor;
-	}
+    public int getInicio() {
+        return inicio;
+    }
 
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
+    public int getFim() {
+        return fim;
+    }
 
-	public void setInicio(int inicio) {
-		this.inicio = inicio;
-	}
+    public Cor getCor() {
+        return cor;
+    }
 
-	public void setFim(int fim) {
-		this.fim = fim;
-	}
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
 
-	public void setCor(String cor) {
-		
-		
-		
-		this.cor = cor;
-	}
+    public void setInicio(int inicio) {
+        this.inicio = inicio;
+    }
+
+    public void setFim(int fim) {
+        this.fim = fim;
+    }
+
+    public int getAno() {
+        
+        return ano;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+
+    public void setCor(Cor cor) {
+
+        this.cor = cor;
+    }
 
 	public void cadastra() {
 		setMarca(JOptionPane.showInputDialog("Informe a marca do carro: "));
-		setInicio(Integer.parseInt(JOptionPane.showInputDialog("Informe o período inicial: ")));
-		setFim(Integer.parseInt(JOptionPane.showInputDialog("Informe o período final: ")));
-		setCor(JOptionPane.showInputDialog(
-				"Informe a cor:"
-				+ "\n1 - Vermelho"
-				+ "\n2 - Branco"
-				+ "\n3 - Prata"
-				+ "\n4 - Preto"));
+		setAno(Integer.parseInt(JOptionPane.showInputDialog("Informe o ano do carro: ")));
 		
 	}
 	
 	public void periodoFabricacao() {
 		int periodoFabricacao;
-		int filtrarPeriodo = Integer.parseInt(JOptionPane.showInputDialog("Informe o período que deseja filtrar: "));
-		periodoFabricacao = getFim()-getInicio();
-		//usar LocalDate para fazer is between
-		if (filtrarPeriodo == periodoFabricacao) {
+		JOptionPane.showMessageDialog(null, "Informe o período que deseja filtrar: ");
+		
+                                            setInicio(Integer.parseInt(JOptionPane.showInputDialog("Informe o primeiro ano: ")));
+                                            setFim(Integer.parseInt(JOptionPane.showInputDialog("Informe o segundo ano: ")));
+                                            
+		if (getAno() >= getInicio() && getAno()<= getFim()) {
 			JOptionPane.showMessageDialog(null, "Período de fabricação: " + periodoFabricacao);
 		}else {
 			JOptionPane.showMessageDialog(null, "Não há carros com esse período de fabricação");

@@ -1,27 +1,32 @@
 package terceira_aula.correcao_exercicio_carro;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
 public enum EnumCor {
-	VERMELHO(1, "Vermelho"), 
-	BRANCO(2, "Branco"), 
-	PRATA(3, "Prata"), 
-	PRETO(4, "Preto");
-	
-	public int codigo;
-	public String descricao;
-	
-	
-	private EnumCor(int codigo, String descricao) {
-		this.codigo = codigo;
-		this.descricao = descricao;
-	}
-	
+
+	BRANCO(1, "Branco"),
+	PRETO(2, "Preto"),
+	AZUL(3, "Azul"),
+	VERMELHO(4, "Vermelho"),
+	PRATA(5, "Prata");
+
+
+	private int codigo;
+	private String descricao;
+
+
+
 	public static EnumCor findById(int codigo) {
 		for (EnumCor cor : EnumCor.values()) {
-			if (codigo == cor.codigo) {
+			if(codigo == cor.codigo) {
 				return cor;
 			}
 		}
 		return null;
 	}
-	
+
 }
+

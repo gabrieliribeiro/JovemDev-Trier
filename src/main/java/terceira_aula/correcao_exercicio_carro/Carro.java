@@ -1,14 +1,9 @@
 package terceira_aula.correcao_exercicio_carro;
 
-import java.text.DateFormat;
-import java.time.LocalDate;
-
-import javax.print.attribute.standard.DateTimeAtCompleted;
 import javax.swing.JOptionPane;
 
 import lombok.Getter;
 import lombok.Setter;
-
 
 @Getter
 @Setter
@@ -16,20 +11,18 @@ public class Carro {
 
 	private String marca;
 	private int ano;
-	EnumCor cor;
+	private EnumCor cor;
 
-
-	public void cadastra() {
-		setMarca(JOptionPane.showInputDialog("Informe a marca do carro: "));
-		setAno(Integer.parseInt(JOptionPane.showInputDialog("Informe o : ")));
-		
+	void cadastrar() {
+		marca = JOptionPane.showInputDialog("Marca");
+		ano = Integer.parseInt(JOptionPane.showInputDialog("Ano"));
+		cor = Util.escolheCor();
 		if (!validar()) {
-			cadastra();
+			cadastrar();
 		}
-
 	}
 
-	public boolean validar() {
+	boolean validar() {
 		if (marca.trim().equals("")) {
 			JOptionPane.showMessageDialog(null, "A marca deve ser preenchida");
 			return false;
@@ -39,21 +32,37 @@ public class Carro {
 			return false;
 		}
 		if (cor == null) {
-			JOptionPane.showMessageDialog(null, "A cor é inválida");
+			JOptionPane.showMessageDialog(null, "Cor inválida");
 			return false;
 		}
 		return true;
 	}
 
-	public boolean isPeriodoFabricacao(int anoInicial, int anoFinal) {
-		return this.ano >= anoInicial && this.ano <= anoFinal;
+	boolean isPeriodoFabricacao(int anoInicial, int anoFinal) {
+		return ano >= anoInicial && ano <= anoFinal;
 	}
 
-	public boolean isMarca(String buscaMarca) {
-		return buscaMarca.equalsIgnoreCase(this.marca);
+	boolean isMarca(String marcaBusca) {
+		return marcaBusca.equalsIgnoreCase(marca);
 	}
 
-	public boolean isCor(EnumCor buscaCor) {
-		return buscaCor == this.cor;
+	boolean isCor(EnumCor corBusca) {
+		return corBusca == cor;
 	}
+
+	public String toString() {
+		return "Marca: " + marca + "\n"
+				+ "Ano: " + ano + "\n"
+				+ "Cor: " + cor.getDescricao() + "\n"
+				+ "__________\n";
+	}
+
+	public EnumCor getCor() {
+		return cor;
+	}
+
+	public void setCor(EnumCor cor) {
+		this.cor = cor;
+	}
+
 }

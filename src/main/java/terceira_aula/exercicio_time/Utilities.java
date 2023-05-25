@@ -1,8 +1,25 @@
 package terceira_aula.exercicio_time;
 
+import javax.swing.*;
 import java.util.List;
 
 public class Utilities {
+
+    static int escolheOpMenu() {
+        String menuPrincipal = "|---- Menu Principal ----|"
+                + "\n1 - Cadastrar time"
+                + "\n2 - Filtrar artilheiro"
+                + "\n3 - Filtrar time com mais gols"
+                + "\n4 - Sair";
+        return Integer.parseInt(JOptionPane.showInputDialog(menuPrincipal));
+    }
+
+    static int menuCadastroJogadores(){
+        String menuCadastroMaisJogadores = "Deseja realizar mais cadastros de jogadores: "
+                + "\n1 - Sim"
+                + "\n2 - Não";
+        return Integer.parseInt(JOptionPane.showInputDialog(menuCadastroMaisJogadores));
+    }
 
 //	public static Jogador verificarArtilheiro(List<Time> times) {
 //		Jogador artilheiro = null;

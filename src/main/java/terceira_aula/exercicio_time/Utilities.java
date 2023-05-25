@@ -36,23 +36,23 @@ public class Utilities {
 		resposta = "O artilheiro do campeonato é: " + artilheiro;
 		return resposta;
 	}
-//
-//	public static Time verificarTimeComMaisGols(List<Time> times) {
-//		Time timeComMaisGols = null;
-//		int maxGols = 0;
-//
-//		for (Time time : times) {
-//			int totalGols = 0;
-//			for (Jogador jogador : time.getJogadores()) {
-//				totalGols += jogador.getQuantidadeDeGols();
-//			}
-//			if (totalGols > maxGols) {
-//				maxGols = totalGols;
-//				timeComMaisGols = time;
-//			}
-//		}
-//
-//		return timeComMaisGols;
-//	}
-//
+
+	public static String verificarTimeComMaisGols(List<Time> times) {
+		String timeComMaisGols = " ";
+		int maxGols = 0;
+
+		for (Time time : times) {
+			int totalGols = 0;
+			for (Jogador jogador : time.getListaJogador()) {
+				totalGols += jogador.getQuantidadeDeGols();
+			}
+			if (totalGols > maxGols) {
+				maxGols = totalGols;
+				timeComMaisGols = time.getNomeTime();
+			}
+		}
+
+		return timeComMaisGols;
+	}
+
 }

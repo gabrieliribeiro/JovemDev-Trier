@@ -35,7 +35,7 @@ public class Main {
                     JOptionPane.showMessageDialog(null, Utilities.verificarArtilheiro(listaTime));
                     break;
                 case 3:
-                    JOptionPane.showMessageDialog(null, "");
+                    JOptionPane.showMessageDialog(null, Utilities.verificarTimeComMaisGols(listaTime));
                     break;
                 case 4:
                     JOptionPane.showMessageDialog(null, "Saindo...");

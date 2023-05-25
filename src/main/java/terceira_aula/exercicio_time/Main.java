@@ -18,14 +18,15 @@ public class Main {
             opcao = Utilities.escolheOpMenu();
             switch (opcao) {
                 case 1:
-                    Time time = new Time();
-                    time.cadastroTime();
-                    listaTime.add(time);
+                	///refatorar com cadastraTime
+                    Utilities.cadastraTime(listaTime);
                     int opcaoCadastraMaisJogador = 0;
                     do{
                         opcaoCadastraMaisJogador = Utilities.menuCadastroJogadores();
                         if (opcaoCadastraMaisJogador==1){
-                            time.cadastrarJogador();
+                        	//refatorar colocando essa função no Time
+                            //time.cadastrarJogador();
+                        	System.out.println("Em manutenção! :D");
                         }else{
                             JOptionPane.showMessageDialog(null, "Encerrando cadastro jogador");
                         }

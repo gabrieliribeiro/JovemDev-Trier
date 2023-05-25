@@ -20,20 +20,20 @@ public class Utilities {
                 + "\n2 - Não";
         return Integer.parseInt(JOptionPane.showInputDialog(menuCadastroMaisJogadores));
     }
-
+    
+    public static void cadastraTime(List<Time> times) {
+    	Time time = new Time();
+        time.cadastroTime();
+        times.add(time);
+	}
+    
 	public static String verificarArtilheiro(List<Time> times) {
-		String artilheiro = "";
+		Jogador artilheiro = new Jogador();
 		String resposta = "";
-		int maxGols = 0;
 		for (Time time : times) {
-			for (Jogador jogador : time.getListaJogador()) {
-				if (jogador.getQuantidadeDeGols() > maxGols) {
-					maxGols = jogador.getQuantidadeDeGols();
-					artilheiro = jogador.getNome();
-				}
-			}
+			artilheiro = time.getArtilheiro();
 		}
-		resposta = "O artilheiro do campeonato é: " + artilheiro;
+		resposta = "O artilheiro do campeonato é: " + artilheiro.toString();
 		return resposta;
 	}
 
@@ -48,7 +48,7 @@ public class Utilities {
 			}
 			if (totalGols > maxGols) {
 				maxGols = totalGols;
-				timeComMaisGols = time.getNomeTime();
+				timeComMaisGols = time.toString();
 			}
 		}
 

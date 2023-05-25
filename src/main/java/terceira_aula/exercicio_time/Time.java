@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @Getter
@@ -23,9 +24,27 @@ public class Time {
 		jogador.cadastraJogador();
 		listaJogador.add(jogador);
 	}
+	
+	public Jogador getArtilheiro() {
+		Jogador artilheiro = listaJogador.get(0);
+		for (Jogador jogador : listaJogador) {
+			if (jogador.getQuantidadeDeGols() > artilheiro.getQuantidadeDeGols()) {
+				artilheiro = jogador;
+			}
+		}
+		return artilheiro;
+	}
+	
+	public String listagemDeJogador() {
+		String listagem = "Jogadores do time: ";
+		for (Jogador jogador : listaJogador) {
+			listagem += jogador;
+		}
+		return listagem;
+	}
+	
 	public String toString() {
 		return "\n|- Time: " + getNomeTime()
-				+"\n|- Camisa: " + getListaJogador()
-				+"\n|__________|\n";
+				+"\n|- Jogadores:" + listagemDeJogador() +"\n";
 	}
 }

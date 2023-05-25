@@ -21,7 +21,7 @@ public class Jogador {
 	public String toString() {
 		return "\n|- Nome: " + getNome()
 				+"\n|- Camisa: " + getNumeroCamisa()
-				+"\n|- Cor: " + getQuantidadeDeGols()
-				+"\n|__________|\n";
+				+"\n|- Quantidade de gols: " + getQuantidadeDeGols()
+				+"\n|---------\n";
 	}
 }

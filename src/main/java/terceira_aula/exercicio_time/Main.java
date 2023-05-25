@@ -11,8 +11,8 @@ public class Main {
     static List<Time> listaTime = new ArrayList<Time>();
 
     public static void main(String[] args) {
+
         int opcao = 0;
-        int cadastroMaisJogadores = 0;
 
         do {
             opcao = Utilities.escolheOpMenu();

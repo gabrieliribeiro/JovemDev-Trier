@@ -23,7 +23,9 @@ public class Time {
 		jogador.cadastraJogador();
 		listaJogador.add(jogador);
 	}
-
-
-
+	public String toString() {
+		return "\n|- Time: " + getNomeTime()
+				+"\n|- Camisa: " + getListaJogador()
+				+"\n|__________|\n";
+	}
 }

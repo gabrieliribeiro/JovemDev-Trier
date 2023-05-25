@@ -18,4 +18,10 @@ public class Jogador {
 		setQuantidadeDeGols((Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de gols marcado por esse jogador: "))));
 	}
 
+	public String toString() {
+		return "\n|- Nome: " + getNome()
+				+"\n|- Camisa: " + getNumeroCamisa()
+				+"\n|- Cor: " + getQuantidadeDeGols()
+				+"\n|__________|\n";
+	}
 }

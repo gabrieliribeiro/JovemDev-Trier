@@ -21,19 +21,21 @@ public class Utilities {
         return Integer.parseInt(JOptionPane.showInputDialog(menuCadastroMaisJogadores));
     }
 
-//	public static Jogador verificarArtilheiro(List<Time> times) {
-//		Jogador artilheiro = null;
-//		int maxGols = 0;
-//		for (Time time : times) {
-//			for (Jogador jogador : time.getJogadores()) {
-//				if (jogador.getQuantidadeDeGols() > maxGols) {
-//					maxGols = jogador.getQuantidadeDeGols();
-//					artilheiro = jogador;
-//				}
-//			}
-//		}
-//		return artilheiro;
-//	}
+	public static String verificarArtilheiro(List<Time> times) {
+		String artilheiro = "";
+		String resposta = "";
+		int maxGols = 0;
+		for (Time time : times) {
+			for (Jogador jogador : time.getListaJogador()) {
+				if (jogador.getQuantidadeDeGols() > maxGols) {
+					maxGols = jogador.getQuantidadeDeGols();
+					artilheiro = jogador.getNome();
+				}
+			}
+		}
+		resposta = "O artilheiro do campeonato é: " + artilheiro;
+		return resposta;
+	}
 //
 //	public static Time verificarTimeComMaisGols(List<Time> times) {
 //		Time timeComMaisGols = null;

@@ -32,7 +32,7 @@ public class Main {
                     } while (opcaoCadastraMaisJogador != 2);
                     break;
                 case 2:
-                    JOptionPane.showMessageDialog(null, "");
+                    JOptionPane.showMessageDialog(null, Utilities.verificarArtilheiro(listaTime));
                     break;
                 case 3:
                     JOptionPane.showMessageDialog(null, "");

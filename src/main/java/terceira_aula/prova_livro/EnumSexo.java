@@ -1,4 +1,4 @@
-package terceira_aula.teste_livro;
+package terceira_aula.prova_livro;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

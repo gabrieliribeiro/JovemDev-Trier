@@ -1,4 +1,4 @@
-package terceira_aula.teste_livro;
+package terceira_aula.prova_livro;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -20,8 +20,17 @@ public class Livro {
         listaAutores.addAll(Utilities.escolhaAutor(autores));
     }
     
+    boolean validaDados(){
+        if(getValor() <= 0) {
+        	JOptionPane.showMessageDialog(null, "O valor do livro não pode ser menor ou igual a ZERO!");
+            return true;
+        }
+        return false;
+    }
+    
     public String toString() {
-		return "Título do livro: " + getTitulo() + "\n" 
+		return "--------------- \n"
+				+ "Título do livro: " + getTitulo().toLowerCase() + "\n" 
 				+ "Valor: R$" + getValor()+ "\n"
 				+ "Autor(es): \n" ;
 	}   

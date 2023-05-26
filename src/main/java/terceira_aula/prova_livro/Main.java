@@ -1,4 +1,4 @@
-package terceira_aula.teste_livro;
+package terceira_aula.prova_livro;
 
 
 import javax.swing.*;
@@ -25,13 +25,22 @@ public class Main {
                     Utilities.listaLivros(livros, autores);
                     break;
                 case 4:
-                    Utilities.listagemAutores(autores);
+                    Utilities.pesquisaPorAutor(autores, livros);
                     break;
+                case 5:
+                	Utilities.pesquisaFaixaPreco(livros);
+                	break;
+                case 6:
+                	Utilities.listarAutorCrianca(livros, autores);
+                	break;
+                case 7:
+                	Utilities.listaLivrosPorGeneroAutor(livros, autores);
+                	break;
                 case 8:
-                    JOptionPane.showMessageDialog(null,"Saindo");
+                    JOptionPane.showMessageDialog(null,"Saindo...");
                     break;
                 default:
-                    System.out.println("Its wrong");
+                    System.out.println("Inválido!!");
                     break;
             }
         } while(opcao !=8);

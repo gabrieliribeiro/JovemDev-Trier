@@ -22,7 +22,7 @@ public class Main {
                     Utilities.cadastraLivro(livros, autores);
                     break;
                 case 3:
-                    System.out.println("Ok");
+                    Utilities.listaLivros(livros, autores);
                     break;
                 case 4:
                     Utilities.listagemAutores(autores);

@@ -2,6 +2,7 @@ package terceira_aula.teste_livro;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Utilities {
@@ -28,7 +29,6 @@ public class Utilities {
         return EnumSexo.findById(op);
     }
 
-    //Cadastra autor no menu
     static void cadastraAutor(List<Autor> autores) {
         Autor autor = new Autor();
         autor.cadastroAutor();
@@ -48,7 +48,6 @@ public class Utilities {
         return ret;
     }
 
-
     public static List<Autor> escolhaAutor(List<Autor> autores) {
         List<Autor> autoresSelecionados = new ArrayList<>();
         String autoresDisponiveis = "|-- Autores cadastrados --|\n";
@@ -60,14 +59,21 @@ public class Utilities {
         }
 
         int op = Integer.parseInt(JOptionPane.showInputDialog(autoresDisponiveis));
-
+        
+        
         autoresSelecionados.add(autores.get(op - 1));
-
+        JOptionPane.showMessageDialog(null, "Autor adicionado com sucesso!");
+       
+        
         int novoAutor, contador = 0;
 
         while (true) {
             if (contador < 3) {
-                novoAutor = Integer.parseInt(JOptionPane.showInputDialog("Deseja cadastrar mais um autor?\n1 - Sim\n2 - Não"));
+                novoAutor = Integer.parseInt(JOptionPane.showInputDialog(
+                		"Deseja cadastrar mais um autor?"
+                		+ "\n1 - Sim"
+                		+ "\n2 - Não"
+                		));
             } else {
                 break;
             }
@@ -84,44 +90,25 @@ public class Utilities {
         return autoresSelecionados;
     }
 
-
-    //    static List<Autor> escolheAutor(List<Autor> autores){
-//
-//        String menu = "Autores cadastrados: \n";
-//        for (int i = 0; i < autores.size(); i++) {
-//            Autor autor = autores.get(i);
-//            menu += (i + 1) + autor.tosString();
-//        }
-//        boolean adicionandoAutores = true;
-//
-//        while (adicionandoAutores) {
-//            String opcaoStr = JOptionPane.showInputDialog(null,
-//                    menu + "Digite o número do autor desejado (ou 0 para finalizar):");
-//
-//            try {
-//                int opcao = Integer.parseInt(opcaoStr);
-//
-//                if (opcao == 0) {
-//                    adicionandoAutores = false;
-//                } else if (opcao > 0 && opcao <= autores.size()) {
-//                    autores.add(autores.get(opcao - 1));
-//                    JOptionPane.showMessageDialog(null, "Autor adicionado com sucesso!");
-//                } else {
-//                    JOptionPane.showMessageDialog(null, "Opção inválida. Tente novamente.");
-//                }
-//            } catch (NumberFormatException e) {
-//                JOptionPane.showMessageDialog(null, "Opção inválida. Tente novamente.");
-//            }
-//        }
-//
-//        return autoresLivro;
-//    }
-
     static void cadastraLivro(List<Livro> livros, List<Autor> autores) {
         Livro livro = new Livro();
         livro.cadastraLivro(autores);
         livros.add(livro);
         JOptionPane.showMessageDialog(null, "Livro cadastrado com sucesso!");
     }
-
+    
+    static void listaLivros(List<Livro> livros, List<Autor> autores) {
+    	String menu = "|---- Listagem de Livros ----| \n";
+    	if (livros.isEmpty()) {
+    		menu += "Não há livro cadastrado!";
+		}else {
+			for (Livro livro : livros) {
+				menu += livro.toString();
+				for (Autor autor : livro.getListaAutores()) {
+					menu += autor.tosString();
+				}
+			}
+		}
+    	JOptionPane.showMessageDialog(null, menu);
+    }
 }

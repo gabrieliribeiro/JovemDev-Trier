@@ -19,5 +19,11 @@ public class Livro {
         setValor(Double.parseDouble(JOptionPane.showInputDialog("Informe o valor do livro: ")));
         listaAutores.addAll(Utilities.escolhaAutor(autores));
     }
+    
+    public String toString() {
+		return "Título do livro: " + getTitulo() + "\n" 
+				+ "Valor: R$" + getValor()+ "\n"
+				+ "Autor(es): \n" ;
+	}   
 }
 

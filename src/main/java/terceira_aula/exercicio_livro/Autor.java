@@ -5,27 +5,37 @@ import javax.swing.JOptionPane;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 public class Autor {
 	private String nome;
-	private char sexo;
+	private EnumSexo sexo;
 	private int idade;
-	
+
 	public void cadastraAutor() {
 		setNome(JOptionPane.showInputDialog("Informe o nome do autor: "));
-		setSexo((JOptionPane.showInputDialog("Informe o genêro do autor: (F/M)").charAt(0)));
+		setSexo(Utilities.escolheGenero());
+		int op = 0;
+		do {
+			Utilities.menuCadastroAutores();
+		}while(op != 2);
 	}
+
+
 	
 	//aqui talves criar uma lista de cadastro, acho que resolve problema de listagem.
-	
+
+
 //	public String listaDeAutores() {
 //	String ret = "Autores: ";
 //	for (Autor autor : listaAutores) {
 //		ret += autor;
 //	}
 //	return ret;
-//}
+//	}
 	
 	boolean validar() {
 		if (getNome().trim().equals("")) {

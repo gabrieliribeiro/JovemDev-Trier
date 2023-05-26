@@ -1,5 +1,6 @@
 package terceira_aula.exercicio_livro;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,15 +13,12 @@ public class Main {
 		do {
 			opcao = Utilities.escolheOpMenu();
 			switch (opcao) {
-			case 1: 
-				System.out.println("hum");
-			
-			case 7:
+			case 8:
 				System.out.println("Saindo");
 			default:
 				System.out.println("Erou");
 				break;
 			}
-		} while (opcao != 7);
+		} while (opcao != 8);
 	}
 }

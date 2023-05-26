@@ -1,6 +1,5 @@
 package terceira_aula.exercicio_livro;
 
-import java.util.Iterator;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -18,6 +17,15 @@ public class Utilities {
                 + "\n7 - Sair";
         return Integer.parseInt(JOptionPane.showInputDialog(menuPrincipal));
     }
+
+	static EnumSexo escolheGenero() {
+		String menu = "|---- Cores disponíveis ----|\n";
+		for (EnumSexo cor : EnumSexo.values()) {
+			menu += "|- " + cor.getCodigo() + " - " + cor.getDescricao() + "\n";
+		}
+		int op = Integer.parseInt(JOptionPane.showInputDialog(menu));
+		return EnumSexo.findById(op);
+	}
     
 	public static Autor escolheAutor(List<Autor> autores) {
 		String menu = "Escolha um autor! \n";

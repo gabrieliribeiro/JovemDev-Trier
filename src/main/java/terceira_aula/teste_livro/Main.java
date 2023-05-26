@@ -19,10 +19,14 @@ public class Main {
                     Utilities.cadastraAutor(autores);
                     break;
                 case 2:
-                    Utilities.cadastraLivro(livros);
+                    Utilities.cadastraLivro(livros, autores);
                     break;
                 case 3:
+                    System.out.println("Ok");
+                    break;
+                case 4:
                     Utilities.listagemAutores(autores);
+                    break;
                 case 8:
                     JOptionPane.showMessageDialog(null,"Saindo");
                     break;
@@ -30,7 +34,7 @@ public class Main {
                     System.out.println("Its wrong");
                     break;
             }
-        } while(opcao !=7);
+        } while(opcao !=8);
     }
 
 }

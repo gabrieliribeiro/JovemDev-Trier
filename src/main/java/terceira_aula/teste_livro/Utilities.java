@@ -1,6 +1,7 @@
 package terceira_aula.teste_livro;
 
 import javax.swing.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Utilities {
@@ -17,6 +18,7 @@ public class Utilities {
 
         return Integer.parseInt(JOptionPane.showInputDialog(menuPrincipal));
     }
+
     static EnumSexo escolheGenero() {
         String menu = "Escolha o gênero do autor: \n";
         for (EnumSexo sexo : EnumSexo.values()) {
@@ -31,29 +33,59 @@ public class Utilities {
         Autor autor = new Autor();
         autor.cadastroAutor();
         autores.add(autor);
-
     }
 
-    public static String listagemAutores(List<Autor> autores) {
-        Autor autor =  escolhaAutor(autores);
-        return autor.listaDeAutores();
-     }
+    public static StringBuilder listagemAutores(List<Autor> autores) {
+
+        StringBuilder ret = new StringBuilder("Autores: ");
+
+        for (Autor autor : autores) {
+            ret.append("\n").append(autor.getNome());
+        }
+
+        System.out.println(ret);
+
+        return ret;
+    }
 
 
-    public static Autor escolhaAutor(List<Autor> autores) {
-        String menu = "|-- Autores cadastrados --|\n";
+    public static List<Autor> escolhaAutor(List<Autor> autores) {
+        List<Autor> autoresSelecionados = new ArrayList<>();
+        String autoresDisponiveis = "|-- Autores cadastrados --|\n";
         int pos = 1;
 
         for (Autor autor : autores) {
-            menu += pos + " - " + autor.tosString() + "\n";
-            pos ++;
+            autoresDisponiveis += pos + " - " + autor.tosString() + "\n";
+            pos++;
         }
 
-        int op = Integer.parseInt(JOptionPane.showInputDialog(menu));
-        return autores.get(op-1);
+        int op = Integer.parseInt(JOptionPane.showInputDialog(autoresDisponiveis));
 
+        autoresSelecionados.add(autores.get(op - 1));
+
+        int novoAutor, contador = 0;
+
+        while (true) {
+            if (contador < 3) {
+                novoAutor = Integer.parseInt(JOptionPane.showInputDialog("Deseja cadastrar mais um autor?\n1 - Sim\n2 - Não"));
+            } else {
+                break;
+            }
+
+            if (novoAutor != 1) {
+                break;
+            }
+
+            contador++;
+
+            autoresSelecionados.add(autores.get(Integer.parseInt(JOptionPane.showInputDialog(autoresDisponiveis)) - 1));
+        }
+
+        return autoresSelecionados;
     }
-//    static List<Autor> escolheAutor(List<Autor> autores){
+
+
+    //    static List<Autor> escolheAutor(List<Autor> autores){
 //
 //        String menu = "Autores cadastrados: \n";
 //        for (int i = 0; i < autores.size(); i++) {
@@ -85,9 +117,9 @@ public class Utilities {
 //        return autoresLivro;
 //    }
 
-    static void cadastraLivro(List<Livro> livros){
+    static void cadastraLivro(List<Livro> livros, List<Autor> autores) {
         Livro livro = new Livro();
-        livro.cadastraLivro();
+        livro.cadastraLivro(autores);
         livros.add(livro);
         JOptionPane.showMessageDialog(null, "Livro cadastrado com sucesso!");
     }

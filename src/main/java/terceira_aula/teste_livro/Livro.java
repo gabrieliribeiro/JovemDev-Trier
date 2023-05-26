@@ -14,12 +14,10 @@ public class Livro {
     private double valor;
     private List<Autor> listaAutores = new ArrayList<Autor>();
 
-    public void cadastraLivro(){
+    public void cadastraLivro(List<Autor> autores) {
         setTitulo(JOptionPane.showInputDialog("Informe o título do livro: "));
         setValor(Double.parseDouble(JOptionPane.showInputDialog("Informe o valor do livro: ")));
-        Utilities.escolhaAutor(listaAutores);
+        listaAutores.addAll(Utilities.escolhaAutor(autores));
     }
-
-
-
 }
+

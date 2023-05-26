@@ -25,15 +25,6 @@ public class Autor {
         JOptionPane.showMessageDialog(null, "Autor cadastrado com sucesso!");
     }
 
-    List<Autor>autorLista;
-    public String listaDeAutores() {
-        String ret = "Autores : " + getNome() + "\n";
-        for (Autor autor : autorLista) {
-            ret += autor;
-        }
-        return ret;
-    }
-
     boolean validaNaoTemSobrenome(){
         String[] partesNome = getNome().split(" ");
         if (partesNome.length < 2){

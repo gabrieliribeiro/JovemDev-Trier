@@ -9,8 +9,5 @@
         <module name="PooMatutino" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="PooMatutino" target="15" />
-    </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,5 +1,8 @@
+package exercicioFarmacia;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -33,20 +36,29 @@ public class FarmaciaTest {
 	}
 	
 	@Test
-	@DisplayName("Testando venda")
-	void testeVenda() {
-		Cliente cliente1 = farmacia.clientes.get(0);
+	@DisplayName("Testando venda com receita")
+	void testeVendaComReceita() {
+		Cliente cliente = farmacia.clientes.get(0);
 		Medicamentos med = (Medicamentos) farmacia.produtos.get(1);
-		farmacia.venda(med, 2, cliente1);
-		assertEquals(216.26, cliente1.getSaldoDevedor());
+		farmacia.venda(med, 2, cliente, "Médico");
+		Assertions.assertEquals(216.26, cliente.getSaldoDevedor());
+	}
+
+	@Test
+	@DisplayName("Testando venda sem receita")
+	void testeVendaSemReceita(){
+		Cliente cliente = this.farmacia.clientes.get(1);
+		Produto produto = this.farmacia.produtos.get(0);
+		farmacia.venda(produto, 1, cliente, null);
+		Assertions.assertEquals(58.39,cliente.getSaldoDevedor());
 	}
 	
 	@Test
 	@DisplayName("Testando pagamento")
 	void testePagamento() {
-		Cliente cliente1 = farmacia.clientes.get(0);
-		farmacia.clienteRealizaPagamento(cliente1, 100.00);
-		assertEquals(20.560, cliente1.getSaldoDevedor());
+		Cliente cliente = farmacia.clientes.get(0);
+		farmacia.clienteRealizaPagamento(cliente, 100.00);
+		Assertions.assertEquals(20.56,  cliente.getSaldoDevedor(), 0.01);
 	}
 
 }

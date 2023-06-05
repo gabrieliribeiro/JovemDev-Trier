@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="25cbe9aa-9dce-4376-99ad-60d785d66658" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/exercicioFarmacia/Venda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exercicioFarmacia/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exercicioFarmacia/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exercicioFarmacia/Farmacia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exercicioFarmacia/Farmacia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exercicioFarmacia/Medicamentos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exercicioFarmacia/Medicamentos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exercicioFarmacia/Perfumaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exercicioFarmacia/Perfumaria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exercicioFarmacia/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exercicioFarmacia/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/exercicioFarmacia/FarmaciaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/exercicioFarmacia/FarmaciaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/br.com.trier/PooMatutino/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/br.com.trier/PooMatutino/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/primeira_aula/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/primeira_aula/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/primeira_aula/Pessoa.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/primeira_aula/Pessoa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/segunda_aula/exercicio_carro/Carro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/segunda_aula/exercicio_carro/Carro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/segunda_aula/exercicio_carro/EnumCor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/segunda_aula/exercicio_carro/EnumCor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/segunda_aula/exercicio_carro/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/segunda_aula/exercicio_carro/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/segunda_aula/exercicio_carro/Utilities.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/segunda_aula/exercicio_carro/Utilities.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/segunda_aula/exercicio_corrigido_imc/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/segunda_aula/exercicio_corrigido_imc/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/segunda_aula/exercicio_corrigido_imc/Pessoa.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/segunda_aula/exercicio_corrigido_imc/Pessoa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/terceira_aula/correcao_exercicio_carro/Carro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/terceira_aula/correcao_exercicio_carro/Carro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/terceira_aula/correcao_exercicio_carro/EnumCor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/terceira_aula/correcao_exercicio_carro/EnumCor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/terceira_aula/correcao_exercicio_carro/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/terceira_aula/correcao_exercicio_carro/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/terceira_aula/correcao_exercicio_carro/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/terceira_aula/correcao_exercicio_carro/Util.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/terceira_aula/exercicio_time/Jogador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/terceira_aula/exercicio_time/Jogador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/terceira_aula/exercicio_time/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/terceira_aula/exercicio_time/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/terceira_aula/exercicio_time/Time.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/terceira_aula/exercicio_time/Time.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/terceira_aula/exercicio_time/Utilities.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/terceira_aula/exercicio_time/Utilities.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/terceira_aula/prova_livro/Autor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/terceira_aula/prova_livro/Autor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/terceira_aula/prova_livro/EnumSexo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/terceira_aula/prova_livro/EnumSexo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/terceira_aula/prova_livro/Livro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/terceira_aula/prova_livro/Livro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/terceira_aula/prova_livro/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/terceira_aula/prova_livro/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/terceira_aula/prova_livro/Utilities.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/terceira_aula/prova_livro/Utilities.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2QlGyJSDsusq5Ps043dBEf7sub3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.FarmaciaTest.testePagamento">
+    <configuration name="CaixaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PooMatutino" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercicioBanco.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="exercicioBanco" />
+      <option name="MAIN_CLASS_NAME" value="exercicioBanco.CaixaTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FarmaciaTest.testePagamento" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PooMatutino" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercicioFarmacia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="exercicioFarmacia" />
+      <option name="MAIN_CLASS_NAME" value="exercicioFarmacia.FarmaciaTest" />
+      <option name="METHOD_NAME" value="testePagamento" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FarmaciaTest.testeVenda" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PooMatutino" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercicioFarmacia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="exercicioFarmacia" />
+      <option name="MAIN_CLASS_NAME" value="exercicioFarmacia.FarmaciaTest" />
+      <option name="METHOD_NAME" value="testeVenda" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FarmaciaTest.testeVendaSemReceita" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PooMatutino" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercicioFarmacia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="exercicioFarmacia" />
+      <option name="MAIN_CLASS_NAME" value="exercicioFarmacia.FarmaciaTest" />
+      <option name="METHOD_NAME" value="testeVendaSemReceita" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FarmaciaTest.testePagamento" />
+        <item itemvalue="JUnit.FarmaciaTest.testeVendaSemReceita" />
+        <item itemvalue="JUnit.FarmaciaTest.testeVenda" />
+        <item itemvalue="JUnit.CaixaTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="25cbe9aa-9dce-4376-99ad-60d785d66658" name="Changes" comment="" />
+      <created>1685921011221</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685921011221</updated>
+      <workItem from="1685921012792" duration="3593000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

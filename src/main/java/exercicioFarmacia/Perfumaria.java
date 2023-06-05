@@ -6,4 +6,11 @@ public class Perfumaria extends Produto{
 		super(nome, estoque, valor);
 	}
 
+	@Override
+	public boolean vendaBaixaEstoque(Venda venda) {
+		if (getEstoque() >= venda.getQuantidade() && venda.getCliente().getSaldoDevedor() < 300){
+			return super.vendaBaixaEstoque(venda);
+		}
+		return false;
+	}
 }

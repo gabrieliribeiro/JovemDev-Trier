@@ -10,24 +10,16 @@ public class Medicamentos extends Produto{
 		super(nome, estoque, valor);
 		this.precisaReceita = precisaReceita;
 	}
-	
+
 	@Override
-	public boolean vendaBaixaEstoque(int quantidadeInformada) {
-		
-		return super.vendaBaixaEstoque(quantidadeInformada);
-	}
-	
-	public boolean verificaTemReceita() {
-		if (precisaReceita == true) {
-			return true;
+	public boolean vendaBaixaEstoque(Venda venda) {
+		if (precisaReceita && venda.getMedico()==null){
+			return false;
+		}else {
+			if (getEstoque() >= venda.getQuantidade()) {
+				return super.vendaBaixaEstoque(venda);
+			}
+			return false;
 		}
-		return false;
-	}
-	
-	public boolean vendaMedicamento(String nomeMedico) {
-		if (verificaTemReceita()) {
-			return true;
-		}
-		return false;
 	}
 }

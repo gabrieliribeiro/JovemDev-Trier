@@ -190,3 +190,43 @@ inner join partido
 group by partido.sigla
 order by votos desc;
 
+-- 21: Selecionar a quantidade de votos registrados para prefeito na cidade de tubarão. 
+-- Os votos registrados são considerados os votos para os candidatos, mais os votos brancos e nulos.
+
+select  count(*) as total_votos
+from voto
+inner join candidato on candidato.id = voto.candidato
+inner join cidade on cidade.id = candidato.cidade and cidade.nome = 'TUBARÃO';
+
+
+-- 22: Selecionar a quantidade de eleitores que deixaram de votar na cidade de tubarão
+
+select 
+	 vi.brancos + vi.nulos as invalidos
+from 
+	voto_invalido vi
+inner join cidade
+	on vi.cidade = cidade.id and cidade.nome = 'TUBARÃO';
+
+--23: Selecionar a quantidade de eleitores que deixaram de votar em cada cidade, ordenado pela maior quantidade de faltantes
+
+select 
+	 vi.brancos + vi.nulos as invalidos
+from 
+	voto_invalido vi
+inner join cidade
+	on vi.cidade = cidade.id
+order by invalidos desc;
+
+-- 24: Selecionar o percentual de faltantes em cada cidade, ordenado pelo maior percentual.
+
+
+--25: . Selecionar o candidato a prefeito eleito de cada cidade, ordenado pelo nome da cidade.
+select cand.nome, max(v.voto)
+from voto v 
+inner join candidato cand
+	on cand.id = v.candidato
+inner join cidade
+	on cidade.cidade = cidade.id
+order by cidade.nome;
+
